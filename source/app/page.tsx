@@ -7,7 +7,7 @@ export default function Home() {
         Hello World. <Link href="/about">About</Link>
       </div>
       <div>
-        Hoi Maud en Stijn
+        Hoi Pap en Mam
       </div>
     </div>
   );
