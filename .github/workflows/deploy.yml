@@ -11,6 +11,11 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./spurce
+
     steps:
       - uses: actions/checkout@v4
 
