@@ -1,15 +1,11 @@
-import Link from "next/link";
 
-export default function About() {
+export default function Index() {
   return (
     <>
-      <h1>One</h1>
-      <div>
-        Back to <Link href="/">Home</Link>
-      </div>
+      <h1>Het audio bestand:</h1>
       
       <audio autoPlay controls>
-        <source src="/1/PTT-20260830-WA0000.opus" type="audio/ogg; codecs=opus" />
+        <source src="PTT-20260830-WA0000.opus" type="audio/ogg; codecs=opus" />
         Your browser does not support the audio element.
       </audio>
     </>
