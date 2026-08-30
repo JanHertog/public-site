@@ -11,7 +11,7 @@ export default function About() {
       <audio autoplay controls>
         <source src="your-audio-file.opus" type="audio/ogg; codecs=opus">
         Your browser does not support the audio element.
-    </audio>
+      </audio>
     </>
   );
 }
