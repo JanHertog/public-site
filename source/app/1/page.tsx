@@ -9,7 +9,7 @@ export default function About() {
       </div>
       
       <audio autoPlay controls>
-        <source src="your-audio-file.opus" type="audio/ogg; codecs=opus" />
+        <source src="/1/PTT-20260830-WA0000.opus" type="audio/ogg; codecs=opus" />
         Your browser does not support the audio element.
       </audio>
     </>
