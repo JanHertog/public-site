@@ -8,8 +8,8 @@ export default function About() {
         Back to <Link href="/">Home</Link>
       </div>
       
-      <audio autoplay controls>
-        <source src="your-audio-file.opus" type="audio/ogg; codecs=opus">
+      <audio autoPlay controls>
+        <source src="your-audio-file.opus" type="audio/ogg; codecs=opus" />
         Your browser does not support the audio element.
       </audio>
     </>
