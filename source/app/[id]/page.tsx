@@ -5,9 +5,12 @@ export function generateStaticParams() {
         id: String(i + 1),
     }));
 }
-export default function Index({ params }: { params: { id: string } }) {
-    // 2. Construct the exact URL on the server
-    const currentUrl = `https://markvangelder.nl/${params.id}/`;
+export default async function Index({ params }: { params: Promise<{ id: string }> }) {
+    // Await the params Promise
+    const { id } = await params;
+
+    // Construct the exact URL on the server
+    const currentUrl = `https://markvangelder.nl/${id}/`;
 
     return (
         <div style={{ padding: '20px', textAlign: 'center', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
