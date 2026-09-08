@@ -1,13 +1,9 @@
 import { QRCodeSVG } from "qrcode.react";
 
 export function generateStaticParams() {
-    return [
-        { id: '1' },
-        { id: '2' },
-        { id: '3' },
-        { id: '4' },
-        // Add more ID objects here as you add more folders to /public/
-    ];
+    return Array.from({ length: 40 }, (_, i) => ({
+        id: String(i + 1),
+    }));
 }
 export default function Index({ params }: { params: { id: string } }) {
     // 2. Construct the exact URL on the server
