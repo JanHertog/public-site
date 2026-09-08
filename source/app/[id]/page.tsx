@@ -1,12 +1,50 @@
-export default function Index() {
-  return (
-    <>
-      <h1>Het audio bestand:</h1>
-      
-      <audio autoPlay controls>
-        <source src="soundfile.opus" type="audio/ogg; codecs=opus" />
-        Your browser does not support the audio element.
-      </audio>
-    </>
-  );
+import { QRCodeSVG } from "qrcode.react";
+
+export function generateStaticParams() {
+    return [
+        { id: '1' },
+        { id: '2' },
+        { id: '3' },
+        { id: '4' },
+        // Add more ID objects here as you add more folders to /public/
+    ];
+}
+export default function Index({ params }: { params: { id: string } }) {
+    // 2. Construct the exact URL on the server
+    const currentUrl = `https://markvangelder.nl/${params.id}/`;
+
+    return (
+        <div style={{ padding: '20px', textAlign: 'center', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+
+            <h1>Het audio bestand:</h1>
+            <audio autoPlay controls style={{ width: '100%', maxWidth: '400px', marginBottom: '30px' }}>
+                <source src="soundfile.opus" type="audio/ogg; codecs=opus" />
+                Your browser does not support the audio element.
+            </audio>
+
+            <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <hr style={{ width: '80%', borderColor: '#eaeaea', marginBottom: '30px' }} />
+
+                {/* 3. Render as an SVG directly into the HTML at build time */}
+                <QRCodeSVG
+                    value={currentUrl}
+                    size={160}
+                    level={'M'}
+                    style={{ marginBottom: '10px' }}
+                />
+
+                <p style={{ marginTop: '10px', fontSize: '1rem', color: '#555' }}>
+                    De link naar deze pagina:
+                </p>
+                <a
+                    href={currentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: '1.2rem', color: '#0070f3', textDecoration: 'none', wordWrap: 'break-word', maxWidth: '100%' }}
+                >
+                    {currentUrl}
+                </a>
+            </div>
+        </div>
+    );
 }
