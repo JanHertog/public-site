@@ -10,7 +10,7 @@ export default async function Index({ params }: { params: Promise<{ id: string }
     const { id } = await params;
 
     // Construct the exact URL on the server
-    const currentUrl = `https://markvangelder.nl/${id}/`;
+    const currentUrl = `https://markvangelder.nl/scouting-hitster/${id}/`;
 
     return (
         <div style={{ padding: '20px', textAlign: 'center', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
