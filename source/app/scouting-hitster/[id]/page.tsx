@@ -18,6 +18,8 @@ export default async function Index({ params }: { params: Promise<{ id: string }
             <h1>Het audio bestand:</h1>
             <audio autoPlay controls style={{ width: '100%', maxWidth: '400px', marginBottom: '30px' }}>
                 <source src="soundfile.opus" type="audio/ogg; codecs=opus" />
+                <source src="soundfile.ogg" type="audio/ogg; codecs=vorbis" />
+                <source src="soundfile.ogg" type="audio/ogg; codecs=opus" />
                 Your browser does not support the audio element.
             </audio>
 
