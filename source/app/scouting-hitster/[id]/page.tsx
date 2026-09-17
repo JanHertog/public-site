@@ -1,20 +1,16 @@
 import { QRCodeSVG } from "qrcode.react";
-import Link from "next/link";
 
 export function generateStaticParams() {
-    return Array.from({ length: 40 }, (_, i) => ({
+    return Array.from({ length: 43 }, (_, i) => ({
         id: String(i + 1),
     }));
 }
 export default async function Index({ params }: { params: Promise<{ id: string }> }) {
     // Await the params Promise
     const { id } = await params;
-    const currentIdNum = parseInt(id, 10);
-    const nextId = currentIdNum + 1;
 
     // Construct the exact URL on the server
     const currentUrl = `https://markvangelder.nl/scouting-hitster/${id}/`;
-    const nextUrl = `/scouting-hitster/${nextId}/`;
 
     return (
         <div style={{ padding: '20px', textAlign: 'center', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -30,17 +26,6 @@ export default async function Index({ params }: { params: Promise<{ id: string }
                 <source src="soundfile.ogg" type="audio/ogg; codecs=opus" />
                 Your browser does not support the audio element.
             </audio>
-
-            {currentIdNum < 40 && (
-                <div style={{ marginBottom: '30px' }}>
-                    <Link 
-                        href={nextUrl} 
-                        style={{ padding: '12px 24px', backgroundColor: '#0070f3', color: 'white', textDecoration: 'none', borderRadius: '8px', fontSize: '1.2rem', fontWeight: 'bold' }}
-                    >
-                        Volgende ({nextId}) ➔
-                    </Link>
-                </div>
-            )}
 
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <hr style={{ width: '80%', borderColor: '#eaeaea', marginBottom: '30px' }} />
