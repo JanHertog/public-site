@@ -1,4 +1,5 @@
 import { QRCodeSVG } from "qrcode.react";
+import Link from "next/link";
 
 export function generateStaticParams() {
     return Array.from({ length: 40 }, (_, i) => ({
