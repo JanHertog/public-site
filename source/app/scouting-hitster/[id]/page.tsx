@@ -17,6 +17,7 @@ export default async function Index({ params }: { params: Promise<{ id: string }
 
             <h1>Het audio bestand:</h1>
             <audio autoPlay controls style={{ width: '100%', maxWidth: '400px', marginBottom: '30px' }}>
+                <source src="soundfile.aac" type="audio/aac" />
                 <source src="soundfile.mpeg" type="audio/mpeg" />
                 <source src="soundfile.m4a" type="audio/mp4" />
                 <source src="soundfile.m4a.mpeg" type="audio/mpeg" />
